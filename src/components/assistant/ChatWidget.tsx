@@ -1,7 +1,7 @@
 'use client'
 
 import { MessageSquareText } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { promptChips } from '@/data/prompts'
 import { askAssistant } from '@/lib/assistant'
@@ -20,6 +20,9 @@ const initialMessage: AssistantMessage = {
 export const ChatWidget = () => {
   const [messages, setMessages] = useState<AssistantMessage[]>([initialMessage])
 
+  const bottomRef = useRef<HTMLDivElement | null>(null)
+  const hasMountedRef = useRef(false)
+
   const handleAsk = (question: string) => {
     const userMessage: AssistantMessage = {
       id: crypto.randomUUID(),
@@ -36,7 +39,17 @@ export const ChatWidget = () => {
     setMessages((prev) => [...prev, userMessage, answer])
   }
 
-  const history = useMemo(() => messages.slice(-6), [messages])
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true
+      return
+    }
+
+    bottomRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    })
+  }, [messages])
 
   return (
     <div className="rounded-[2rem] border border-white/10 bg-panel p-5 shadow-glow">
@@ -46,7 +59,7 @@ export const ChatWidget = () => {
         </div>
         <div>
           <p className="font-medium text-white">Ask About Me</p>
-          <p className="text-sm text-muted">A portfolio assistant</p>
+          <p className="text-sm text-muted">Andreno&apos;s portfolio assistant</p>
         </div>
       </div>
 
@@ -55,9 +68,10 @@ export const ChatWidget = () => {
       </div>
 
       <div className="mt-5 max-h-[420px] space-y-3 overflow-y-auto pr-1">
-        {history.map((message) => (
+        {messages.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}
+        <div ref={bottomRef} />
       </div>
 
       <div className="mt-5">

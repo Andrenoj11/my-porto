@@ -13,9 +13,13 @@ export const promptChips: PromptChip[] = [
     label: 'Banking work',
     question: 'Does he have banking experience?',
   },
+  // {
+  //   label: 'Mobile projects',
+  //   question: 'Show me mobile projects.',
+  // },
   {
-    label: 'Mobile projects',
-    question: 'Show me mobile projects.',
+    label: 'Experience',
+    question: 'Show me his experience as Software Engineer',
   },
   {
     label: 'Best fit',

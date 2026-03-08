@@ -11,7 +11,9 @@ const buildSummary = () =>
 
 const buildSkills = (keywords: string[]) => {
   const matched = keywords.length
-    ? allSkills.filter((skill) => keywords.some((keyword) => skill.toLowerCase().includes(keyword)))
+    ? allSkills.filter((skill) =>
+        keywords.some((keyword) => skill.toLowerCase().includes(keyword))
+      )
     : allSkills
 
   const skills = matched.length > 0 ? matched : allSkills
@@ -20,7 +22,8 @@ const buildSkills = (keywords: string[]) => {
 
 const buildExperience = (keywords: string[]) => {
   const matched = experiences.filter((experience) => {
-    const haystack = `${experience.domain} ${experience.summary} ${experience.highlights.join(' ')}`.toLowerCase()
+    const haystack =
+      `${experience.domain} ${experience.summary} ${experience.highlights.join(' ')}`.toLowerCase()
     return keywords.length === 0 || keywords.some((keyword) => haystack.includes(keyword))
   })
 
@@ -28,7 +31,7 @@ const buildExperience = (keywords: string[]) => {
   return entries
     .map(
       (experience) =>
-        `${experience.role} at ${experience.company} (${experience.period}) — ${experience.summary}`,
+        `${experience.role} at ${experience.company} (${experience.period}) — ${experience.summary}`
     )
     .join('\n\n')
 }
@@ -38,7 +41,7 @@ const buildProjects = (keywords: string[]) => {
   return selected
     .map(
       (project, index) =>
-        `${index + 1}. ${project.title} — ${project.summary} Stack: ${project.stack.join(', ')}. Impact: ${project.impact}`,
+        `${index + 1}. ${project.title} — ${project.summary} Stack: ${project.stack.join(', ')}. Impact: ${project.impact}`
     )
     .join('\n\n')
 }
@@ -48,7 +51,7 @@ const buildRecommendation = (keywords: string[]) => {
   return selected
     .map(
       (project, index) =>
-        `${index + 1}. ${project.title} is relevant because it covers ${project.tags.join(', ')} and uses ${project.stack.join(', ')}.`,
+        `${index + 1}. ${project.title} is relevant because it covers ${project.tags.join(', ')} and uses ${project.stack.join(', ')}.`
     )
     .join('\n\n')
 }
@@ -73,6 +76,6 @@ export const buildResponse = (question: string, intent: AssistantIntent) => {
     case 'contact':
       return buildContact()
     default:
-      return `I can help with ${profile.name}'s summary, skills, experience, projects, or contact details. Try asking things like “Show me mobile projects” or “Does he have banking experience?”`
+      return `I can help with ${profile.name}'s summary, skills, experience, projects, or contact details. Try asking things like “Show me his projects” or “Does he have banking experience?”`
   }
 }

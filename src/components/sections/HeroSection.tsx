@@ -8,11 +8,15 @@ export const HeroSection = () => {
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-5">
-              <p className="text-sm uppercase tracking-[0.26em] text-accent">Software Engineer</p>
+              <p className="text-sm uppercase tracking-[0.26em] text-accent">
+                Software Engineer
+              </p>
               <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
                 Building useful products across web, mobile, and internal systems.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted">{profile.longSummary}</p>
+              <p className="max-w-2xl text-lg leading-8 text-muted">
+                {profile.longSummary}
+              </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <a
@@ -48,7 +52,9 @@ export const HeroSection = () => {
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-sm text-muted">Focus</p>
-                  <p className="mt-2 font-medium text-white">Fullstack Engineering</p>
+                  <p className="mt-2 font-medium text-white">
+                    Fullstack & AI Engineering
+                  </p>
                 </div>
               </div>
             </div>

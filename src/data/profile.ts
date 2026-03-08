@@ -8,7 +8,7 @@ export const profile: Profile = {
   summary:
     'Software Engineer with 5+ years of experience building enterprise, fintech, and consumer-scale web applications. Strong focus on frontend architecture, performance analysis, and reliability, with experience operating in regulated and large-scale environments.',
   longSummary:
-    'I build product-focused software with a strong front-end foundation and growing full-stack depth. My work spans mobile apps, internal operational tools, regulated financial interfaces, reusable component systems, and form-heavy workflows. I enjoy turning complex requirements into clear user flows, maintainable code, and reliable product experiences.',
+    'I build product-focused software with a strong front-end foundation and growing full-stack depth. My work spans web & mobile app, backend, internal operational tools, regulated financial interfaces, reusable component systems, and form-heavy workflows. I enjoy turning complex requirements into clear user flows, maintainable code, and reliable product experiences.',
   email: 'andreno.juanda11@gmail.com',
   socials: {
     github: 'https://github.com/Andrenoj11',

@@ -1,11 +1,11 @@
 export const skillGroups = [
   {
     title: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit'],
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'React PDF'],
   },
   {
     title: 'Mobile',
-    items: ['React Native', 'Formik', 'Yup', 'Axios', 'WatermelonDB'],
+    items: ['React Native', 'Formik', 'Yup', 'Axios', 'Redux Toolkit'],
   },
   {
     title: 'Backend & Tools',

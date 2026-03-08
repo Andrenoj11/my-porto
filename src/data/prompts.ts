@@ -3,7 +3,7 @@ import type { PromptChip } from '@/types'
 export const promptChips: PromptChip[] = [
   {
     label: 'Summarize me',
-    question: 'Summarize Kurniawan in 20 seconds.',
+    question: 'Summarize Andreno in 20 seconds.',
   },
   {
     label: 'Skills',

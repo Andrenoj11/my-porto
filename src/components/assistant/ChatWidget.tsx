@@ -14,7 +14,7 @@ const initialMessage: AssistantMessage = {
   id: 'welcome',
   role: 'assistant',
   content:
-    'Hi, I am Kurniawan\'s portfolio assistant. Ask me about skills, experience, projects, or ask for a quick summary.',
+    "Hi, I am Andreno's portfolio assistant. Ask me about skills, experience, projects, or ask for a quick summary.",
 }
 
 export const ChatWidget = () => {
@@ -46,7 +46,7 @@ export const ChatWidget = () => {
         </div>
         <div>
           <p className="font-medium text-white">Ask About Me</p>
-          <p className="text-sm text-muted">Free portfolio assistant, no API needed</p>
+          <p className="text-sm text-muted">A portfolio assistant</p>
         </div>
       </div>
 
